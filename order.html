@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris PicNic - Paniers Repas pour Groupes Scolaires</title>
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="image/Logo Paris Pic-Nic.jpg" alt="Logo Paris Pic-Nic" class="site-logo">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul>
+                <li><a href="index.html">Acceuil</a></li>
+                <li><a href="menus.html">Nos Menus</a></li>
+                <li><a href="order.html">Commander</a></li>
+                <li><a href="about.html">A Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="order-page-main">
+        <section id="order-form-container">
+            <h2>Passez Votre Commande de Paniers Repas</h2>
+            <p class="intro-text">Veuillez remplir tous les champs ci-dessous pour valider votre demande. Nous vous enverrons une confiramtion par e-mail.</p>
+
+            <form action="[URL_POUR_ENVOIE_EMAIL]" method="POST" id="picnic-order-form">
+                <fieldset>
+                    <legend>Détails du Groupe et du Contact</legend>
+
+                    <label for="agency-name">Nom de l'Agence / Ecole :</label>
+                    <input type="text" id="agency-name" name="agency_name" required>
+
+                    <label for="contact-person">Nom du Contact sur Place :</label>
+                    <input type="text" id="contact-person" name="contact_person" required>
+
+                    <label for="contact-email">Adresse E-mail (pour confiramtion) :</label>
+                    <input type="email" id="contact-email" name="contact_email" required>
+
+                    <label for="contact-phone">Téléphone Portable du Contact :</label>
+                    <input type="tel" id="contact-phone" name="contact_phone" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Détails des Repas</legend>
+
+                    <label for="delevery-date">Date de Livraison Souhaitée :</label>
+                    <input type="date" id="delevery-date" name="delevery_date" required>
+
+                    <label for="total-people">Nombre Total de Perosonnes :</label>
+                    <input type="number" id="total-people" name="total_people" min="10" required>
+
+                    <label for="menu-choice">Choix du Menu :</label>
+                    <select id="menu-choice" name="menu_choice" required>
+                        <option value="">-- Sélectionnez un menu --</option>
+                        <option value="standard">Menu Standard Paris Pic-Nic</option>
+                        <option value="premium">Menu Premium Gourmand</option>
+                        <option value="vegetarien">Option Végétarienne</option>
+                    </select>
+
+                    <label for="special-diets">Allergies / Régimes Spéciaux (détails) :</label>
+                    <textarea id="special-diets" name="special_diets" rows="3" placeholder="Ex : 2 sans gluten, 1 végétarien, 1 allergie aux noix"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Livraison et Notes</legend>
+                    <label for="delivery-adress">Adresse Compléte de Livraison</label>
+                    <textarea id="delivery-adress" name="delivery_adress" rows="3" required></textarea>
+
+                    <label for="delevery-time">Heure de Livraison Souhaitée (Approximative) :</label>
+                    <input type="time" id="delevery-time" name="delevery_time" required>
+
+                    <label for="additional-notes">Notes Supplémentaires pour la Commande :</label>
+                    <textarea id="additional-notes" name="additional_notes" rows="4" placeholder="Ex : Laisser les paniers à la réception si personne n'est disponible."></textarea>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="cta-large">VALIDER ET ENVOYER MA COMMANDE</button>
+                    <p class="disclaimer">Un avis détaillé vous sera envoyé par e-mail aprés validation.</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Paris Pic-Nic. Tous les droits réservés.</p>
+        <div class="footer-links">
+            <a href="contact.html">Mnetions Légales</a> | <a href="contact.html">Confodentialité</a>
+        </div>
+    </footer>
+    
+</body>
+</html>
