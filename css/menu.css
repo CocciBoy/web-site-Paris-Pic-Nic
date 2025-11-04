@@ -1,0 +1,337 @@
+/* 1. RESET ET FONDAMENTAUX */
+:root {
+    /* Couleurs du Logo "Paris Pic-Nic" */
+    --primary-logo-cyan: #00C7C7;
+    --secondary-logo-blue: #000080;
+
+    /* Variables de couleurs - Facilites les changement*/
+    --primary-color: var(--primary-logo-cyan);
+    --secondary-color: var(--secondary-logo-blue);
+    --text-color: #333;
+    --bg-light: #F7F7FE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* 2. NAVIGATION */
+.site-logo {
+    height: 40px;
+    width: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #f7fcfc;
+    border-bottom: 3px solid var(--primary-color);
+    position: relative;
+}
+
+.navbar .logo h1 {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul a {
+    color: var(--text-color);
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.navbar ul a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+.menu-toggle {
+    display: block;
+}
+    
+.navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Style du Footer */
+footer {
+    margin-top: 60px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 25px 5%;
+    text-align: center;
+    border-top: 3px solid var(--primary-color);
+}
+
+footer p {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 0.9em;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-links a:last-child {
+    border-right: none;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive design */
+@media screen and (max-width: 1024px) {
+    .menu-card {
+        max-width: 300px;
+    }
+
+    .premium-menu {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menus-page-main {
+        padding: 20px 15px;
+    }
+
+    #menu-header h2 {
+        font-size: 1.8em;
+    }
+
+    .menu-card {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .menu-details li {
+        font-size: 0.95em;
+    }
+
+    .price-tag {
+        font-size: 1.3em;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer {
+        padding: 20px 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-card {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .menu-card h3 {
+        font-size: 1.5em;
+    }
+
+    .price-tag {
+        font-size: 1.2em;
+    }
+
+    .menu-details li::before {
+        display: none;
+    }
+}
+
+/* Styles Spécifiques aux Menus */
+
+.menus-page-main {
+    padding: 40px 5%;
+    background-color: var(--bg-light);
+}
+
+#menu-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#menu-header h2 {
+    color: var(--secondary-logo-blue);
+    font-size: 2.2em;
+}
+
+#menu-offers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.menu-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.standard-menu {
+    border-top: 5px solid var(--primary-logo-cyan);
+}
+
+.premium-menu {
+    border-top: 5px solid var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.special-options {
+    border-top: 5px solid #ffaa00;
+}
+
+.menu-card h3 {
+    font-size: 1.8em;
+    color: var(--primary-logo-cyan);
+    margin-bottom: 10px;
+}
+
+.price-tag {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-logo-cyan);
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.price-tag span {
+    font-size: 1.4em;
+}
+
+.menu-tagline {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.menu-details {
+    text-align: left;
+    margin: 25px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.menu-details li {
+    padding: 8px 0;
+    margin: 5px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.menu-details li::before {
+    content: "✓";
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.call-to-action {
+    margin: 30px 0 20px;
+    font-size: 1.1em;
+}
+
+.cta-small {
+    display: inline-block;
+    background-color: var(--primary-logo-cyan);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.cta-small:hover {
+    background-color: #0056b3;
+}
+
+.disclaimer-info {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    color: var(--secondary-logo-blue);
+}
